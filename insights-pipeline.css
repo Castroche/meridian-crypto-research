@@ -1,0 +1,57 @@
+.pipeline-panel {
+  margin-top: 28px;
+  padding-top: 17px;
+  border-top: 1px solid var(--ink);
+}
+
+[hidden] { display: none !important; }
+
+.pipeline-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--muted);
+  font: 9px "IBM Plex Mono", monospace;
+  letter-spacing: .08em;
+}
+
+.pipeline-label b { color: var(--amber); }
+.pipeline-label b[data-state="failed"] { color: var(--red); }
+.pipeline-label b[data-state="published"] { color: var(--green); }
+
+.pipeline-panel > strong {
+  display: block;
+  margin: 13px 0 11px;
+  font: 600 14px/1.6 "Noto Serif SC", serif;
+}
+
+.pipeline-track {
+  height: 3px;
+  overflow: hidden;
+  background: var(--line);
+}
+
+.pipeline-track i {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: var(--amber);
+  transition: width .35s ease;
+}
+
+.pipeline-panel p {
+  margin: 10px 0 7px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.7;
+  word-break: break-word;
+}
+
+.pipeline-panel small {
+  color: var(--muted);
+  font: 9px/1.6 "IBM Plex Mono", monospace;
+}
+
+@media (max-width: 850px) {
+  .pipeline-panel { max-width: 480px; }
+}

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0B1117">
+  <link rel="icon" href="/web/mark.svg">
+  <title>深度洞察 — Meridian</title>
+  <link rel="stylesheet" href="/insights.css">
+  <link rel="stylesheet" href="/insights-pipeline.css">
+  <link rel="stylesheet" href="/desk.css"><link rel="stylesheet" href="/web/research-views.css">
+  <script type="module" src="/web/shell.js"></script>
+</head>
+<body class="publication">
+  <div class="reading-progress" id="reading-progress"></div>
+  <meridian-header></meridian-header>
+  <main id="main-content" class="insight-layout">
+    <button class="mobile-archive" id="archive-toggle" aria-controls="edition-archive" aria-expanded="false">选择特稿 ▾</button>
+    <aside class="archive-panel" id="edition-archive">
+      <div class="archive-heading"><span>研究资料库</span><strong id="insight-count">—</strong></div>
+      <div class="library-controls"><label>检索文章<input type="search" id="library-search" placeholder="标题或主题"></label><label>主题<select id="library-topic"><option value="">全部主题</option></select></label><label>刊发日期<input type="date" id="library-date"></label><label><input type="checkbox" id="library-saved"> 只看已保存</label><label><input type="checkbox" id="library-versions"> 包含历史版本</label></div>
+      <div id="insight-list" class="insight-list" aria-live="polite"></div>
+      <p class="retention">未保存文章保留 7 天。保存后长期保留。</p>
+      <section class="pipeline-panel" id="pipeline-panel" aria-live="polite" hidden>
+        <div class="pipeline-label"><span>TODAY'S PIPELINE</span><b id="pipeline-state">—</b></div>
+        <strong id="pipeline-title">正在读取今日任务</strong>
+        <div class="pipeline-track"><i id="pipeline-progress"></i></div>
+        <p id="pipeline-detail">—</p>
+        <small id="pipeline-run">—</small>
+      </section>
+    </aside>
+    <label class="mobile-outline">本文目录<select id="jump-section" aria-label="跳至章节"><option value="">选择章节</option></select></label>
+    <article class="reader" id="reader">
+        <div class="empty" id="empty"><span>NO. —</span><h1>今天的深度文章正在路上</h1><p>左侧会显示资料准备与自由写作的实时状态。篇幅会根据当天新闻材料动态变化。</p></div>
+      <div id="article" hidden>
+        <header class="article-head">
+          <div class="article-kicker"><span id="article-date">—</span><span id="article-status">FULL EDITION</span></div>
+          <h1 id="article-title">—</h1>
+          <p class="deck" id="article-deck">—</p>
+          <div class="article-meta"><details class="question-note"><summary>研究问题与范围</summary><p id="article-question">—</p></details><div class="actions"><button id="save">保存</button><a id="export-md">MD</a><a id="export-json">JSON</a><button class="danger" id="remove">删除</button></div></div>
+        </header>
+        <section id="findings"><h2>研究摘要</h2><ol></ol></section><div class="thesis-pair"><section><small>MARKET CONSENSUS</small><p id="consensus"></p></section><section><small>MERIDIAN VIEW</small><p id="meridian-view"></p></section></div>
+        <p class="lead" id="lead"></p>
+        <div class="story" id="story"></div>
+        <section class="charts"><div class="section-label">DATA EVIDENCE</div><div id="charts"></div></section>
+        <section class="conclusion"><small>CONCLUSION</small><p id="conclusion"></p></section>
+        <section class="source-ledger" id="source-index"><h2>来源与注释</h2><label class="fact-filter">证据类型 <select id="evidence-filter" aria-label="按证据类型筛选"></select></label><p id="ledger-state" role="status"></p><div id="facts"></div><div id="sources"></div></section>
+        <footer>本文章仅作研究信息交流，不构成投资建议。引用来源可查阅，来源正文不在阅读页重新发布。</footer>
+      </div>
+    </article>
+  <aside class="outline-pane"><nav aria-label="本文目录" id="story-outline"></nav></aside>
+  </main>
+  <div class="toast" id="toast"></div>
+  <dialog id="note-dialog"><button autofocus>关闭注释</button><div></div></dialog>
+  <script src="/web/publication.js"></script><script src="/insights.js"></script>
+</body>
+</html>

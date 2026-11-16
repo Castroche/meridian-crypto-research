@@ -1,0 +1,11 @@
+.playwright-cli/
+output/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.env*
+!.env.example
+.vercel/
+.venv/
+node_modules/
+/data/

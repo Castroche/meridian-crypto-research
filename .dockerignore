@@ -1,0 +1,9 @@
+.git
+.playwright-cli
+output
+data
+__pycache__
+*.pyc
+.env*
+.vercel/
+.venv/

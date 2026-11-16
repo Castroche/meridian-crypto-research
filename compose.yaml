@@ -1,0 +1,15 @@
+services:
+  meridian:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      MERIDIAN_DATA_DIR: data
+      MERIDIAN_TIMEZONE: Asia/Shanghai
+      MERIDIAN_SCHEDULER_ENABLED: "true"
+    volumes:
+      - meridian-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  meridian-data:

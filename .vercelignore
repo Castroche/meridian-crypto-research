@@ -1,0 +1,12 @@
+.env*
+!.env.example
+.git/
+.vercel/
+.playwright-cli/
+.pytest_cache/
+data/
+docs/
+output/
+tests/
+__pycache__/
+*.pyc

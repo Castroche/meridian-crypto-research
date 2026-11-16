@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0B1117">
+  <title>市场总览 · MERIDIAN 数字资产研究</title>
+  <link rel="icon" href="/web/mark.svg">
+  <link rel="stylesheet" href="/desk.css">
+  <link rel="stylesheet" href="/web/overview.css">
+  <script type="module" src="/web/shell.js"></script>
+  <script type="module" src="/home.js"></script>
+</head>
+<body class="front">
+  <meridian-header></meridian-header>
+  <main id="main-content" class="overview">
+    <header class="page-intro">
+      <div><h1>市场总览</h1><p id="market-summary" role="status">正在读取数字资产市场快照…</p></div>
+      <div class="dataset-time"><span class="status-label" id="quote-status">行情快照</span><time id="monitor-time"></time></div>
+    </header>
+    <div id="compact-lead"></div>
+    <div id="service-notice" role="status" hidden></div>
+    <div class="quote-grid" id="asset-rows" aria-label="主要资产行情" aria-busy="true"></div>
+    <div class="work-grid">
+      <section class="chart-panel" aria-labelledby="performance-title">
+        <div class="panel-head">
+          <div><h2 id="performance-title">多资产相对表现</h2><p>现货价格回报 <b>·</b> 美元计价</p></div>
+          <div class="range-switch" id="periods" role="group" aria-label="比较周期"></div>
+        </div>
+        <div class="chart-legend" id="legend" aria-label="图例"></div>
+        <div class="plot" id="chart" aria-label="相对表现图"></div>
+        <div class="chart-foot"><span id="chart-source">Coinbase Spot · 北京时间</span><span id="chart-method">以同一窗口开盘价为基准</span></div>
+      </section>
+      <section class="insight-panel" aria-labelledby="insight-head">
+        <header class="panel-heading"><i class="section-mark"></i><h2 id="insight-head">研究焦点</h2></header>
+        <article id="market-insight" aria-busy="true"><p>正在读取研究…</p></article>
+      </section>
+    </div>
+    <section class="research-section" aria-labelledby="research-head">
+      <header class="research-header"><h2 id="research-head">研究动态</h2><a href="/reports">研报中心 <span aria-hidden="true">↗</span></a></header>
+      <div class="research-grid"><article id="feature"></article><div id="recent"></div></div>
+    </section>
+    <noscript>行情与研究数据需要启用 JavaScript。<a href="/api/home">读取研究数据</a></noscript>
+  </main>
+  <footer class="desk-footer"><strong>MERIDIAN</strong><span>数字资产研究 · 北京时间 UTC+8</span></footer>
+</body>
+</html>

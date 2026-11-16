@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0B1117">
+  <link rel="icon" href="/web/mark.svg">
+  <title>Meridian — Crypto Research</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/desk.css"><link rel="stylesheet" href="/web/research-views.css">
+  <script type="module" src="/web/shell.js"></script>
+</head>
+<body class="terminal"><meridian-header></meridian-header>
+  <div class="market-toolbar"><div id="data-status" class="demo-ribbon connecting">正在连接 Coinbase Exchange…</div>
+    <span class="market-clock"><i id="header-live-dot"></i><time id="beijing-time"></time> UTC+8</span>
+    <button class="report-button" id="open-report">报告归档 <span id="archive-count">—</span></button></div>
+  <main id="main-content">
+    <section class="market-strip" aria-label="资产选择">
+      <div class="session-copy">
+        <span class="eyebrow">08:00 早间报告</span>
+        <strong id="report-title">等待当期报告</strong>
+        <span class="muted" id="data-cutoff">资料截至 —</span>
+      </div>
+      <div class="next-report">
+        <span class="muted">下一报告</span>
+        <strong id="countdown">--:--:--</strong>
+        <span id="next-slot">20:00 北京时间</span>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <aside class="rail" aria-label="资产与报告目录"><button id="rail-toggle" aria-expanded="true">收起侧栏</button><div class="rail-body"><h2>关注资产</h2>      <nav class="asset-tabs" id="asset-tabs"></nav>
+<h2>分析目录</h2>
+        <a class="active" href="#overview"><span>01</span>核心判断</a>
+        <a href="#signals"><span>02</span>四维证据</a>
+        <a href="#scenarios"><span>03</span>情景路径</a>
+        <a href="#levels"><span>04</span>关键价位</a>
+        <a href="#performance"><span>05</span>观点复盘</a>
+        <div class="rail-meta">
+          <span>报告版本</span><strong id="report-version">未加载</strong>
+          <span>证据完整度</span><strong class="accent" id="quality-score">—</strong>
+        </div>
+      </div></aside>
+
+      <article class="report">
+        <section class="overview reveal" id="overview">
+          <div class="asset-heading">
+            <div>
+              <span class="eyebrow" id="asset-name">BITCOIN / BTC</span>
+              <div class="price-line">
+                <h1 id="asset-price">$—</h1>
+                <span class="change" id="asset-change">—</span>
+              </div>
+              <div class="quote-context">
+                <span class="feed-badge"><i id="quote-live-dot"></i><b id="quote-feed-status">连接中</b></span>
+                <span>COINBASE EXCHANGE</span>
+                <span id="quote-time">等待首笔成交</span>
+              </div>
+            </div>
+          </div>
+
+          <a class="mobile-stance" id="mobile-stance" href="#research-side"></a>
+          <div class="market-microstructure" aria-label="实时盘口与成交状态">
+            <div><span>BEST BID</span><strong id="best-bid">—</strong></div>
+            <div><span>BEST ASK</span><strong id="best-ask">—</strong></div>
+            <div><span>SPREAD</span><strong id="spread-bps">—</strong></div>
+            <div><span>LAST SIZE</span><strong id="last-size">—</strong></div>
+            <div><span>传输延迟</span><strong id="feed-latency">—</strong></div>
+            <div><span>LAST TRADE</span><strong id="trade-side">—</strong></div>
+          </div>
+
+          <div class="chart-wrap">
+            <div class="chart-head">
+              <div><span class="chart-kicker">LIVE MARKET</span><strong id="chart-title">1 分钟 K 线 · Coinbase Spot</strong></div>
+              <div class="chart-toolbar" role="group" aria-label="K线周期">
+                <button class="active" data-granularity="60">1M</button>
+                <button data-granularity="300">5M</button>
+                <button data-granularity="900">15M</button><button data-granularity="3600">1H</button><button data-granularity="14400">4H</button><button data-granularity="86400">1D</button>
+              </div>
+              <button id="chart-full" aria-label="图表全屏">全屏</button><div class="chart-state"><span id="chart-message-count">0 TRADES</span><b id="chart-status">加载数据</b></div>
+            </div>
+            <div class="indicator-legend" aria-label="技术指标实时值">
+              <span>EMA 9 <b id="indicator-ema9">—</b></span>
+              <span>EMA 21 <b id="indicator-ema21">—</b></span>
+              <span>VWAP <b id="indicator-vwap">—</b></span>
+              <span>RSI 14 <b id="indicator-rsi">—</b></span>
+              <span>VOL <b id="indicator-volume">—</b></span>
+            </div>
+            <div class="exchange-chart">
+              <svg id="price-chart" viewBox="0 0 900 410" preserveAspectRatio="none" role="img" aria-label="Coinbase Exchange 实时蜡烛图、成交量和技术指标"></svg>
+              <div class="chart-tooltip" id="chart-tooltip" hidden></div>
+            </div>
+            <div class="chart-labels" id="chart-labels"><span>—</span><span>—</span><span>—</span><span>—</span></div>
+          </div>
+
+          <details class="thesis-detail"><summary>展开完整研判</summary><div class="thesis-row">
+            <span class="section-index">判断</span>
+            <div>
+              <h2 id="thesis-title">—</h2>
+              <p id="thesis-copy">—</p>
+            </div>
+          </div>
+
+        </details></section>
+
+        <section class="signals reveal" id="signals">
+          <header class="section-header"><span class="section-index">02</span><div><h2>四维证据</h2><p>结论仅引用本批次已核验数据。</p></div></header>
+          <div class="signal-list" id="signal-list"></div>
+        </section>
+
+        <section class="scenarios reveal" id="scenarios">
+          <header class="section-header"><span class="section-index">03</span><div><h2>未来 24 小时路径</h2><p>当前情景及其验证条件。</p></div></header>
+          <div class="scenario-table" id="scenario-table"></div>
+        </section>
+
+        <section class="levels reveal" id="levels">
+          <header class="section-header"><span class="section-index">04</span><div><h2>关键价位</h2><p>由成交密集区与多周期结构共同确认。</p></div></header>
+          <div class="level-grid" id="level-grid"></div>
+        </section>
+
+        <section class="performance reveal" id="performance">
+          <header class="section-header"><span class="section-index">05</span><div><h2>观点复盘</h2><p>滚动 90 天、报告发布满 24 小时后自动结算。</p></div></header>
+          <div class="performance-list" id="performance-list"><p class="empty-performance">等待首批 24H 预测结算。系统不会用未到期报告计算胜率。</p></div>
+        </section>
+      </article>
+      <aside class="intelligence" id="research-side"><div class="intel-head"><h2>市场研判</h2><button id="open-full" disabled>研报全文 ↗</button></div>            <div class="stance-block">
+              <span>24H 观点</span>
+              <strong id="stance">—</strong>
+              <div class="confidence"><i id="confidence-bar"></i></div>
+              <small id="confidence-copy">置信度 —</small>
+            </div>
+<p id="desk-action"></p><dl id="desk-metrics"></dl><h3>关键价位</h3><div id="price-actions"></div><p id="period-evidence"></p><p id="bar-readout" aria-live="polite"></p>          <div class="forecast-line">
+            <div><span>研报快照价</span><strong id="analysis-price">—</strong></div>
+            <div><span id="target-label">研究目标区间</span><strong id="target-range">—</strong></div>
+            <div><span>结构失效点</span><strong id="invalidation">—</strong></div>
+            <div><span>主导变量</span><strong id="driver">—</strong></div>
+          </div>
+          <p class="quality-note" id="quality-note" hidden></p>
+<details><summary>证据与来源</summary><div id="terminal-facts"></div></details>
+</aside>
+    </section>
+  </main>
+
+  <aside class="archive" id="archive" aria-hidden="true">
+    <div class="archive-head"><div><span class="eyebrow">研究档案</span><h2>报告归档</h2><p>未保存报告自动保留三天</p></div><button id="close-report" aria-label="关闭">×</button></div>
+    <a class="archive-center-link" href="/reports"><span>进入报告中心</span><strong>查看全文 · 保存 · 删除 · 导出</strong><i>↗</i></a>
+    <div class="archive-list" id="archive-list">
+      <p class="archive-loading">正在载入报告…</p>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+  <dialog id="full-reader"><button autofocus>关闭全文</button><iframe title="完整研究报告"></iframe></dialog><script src="/web/workstation.js"></script><script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/index.py": {
+      "maxDuration": 300,
+      "includeFiles": "{backend/**,web/**,index.html,terminal.html,desk.css,home.js,reports.html,reports.css,reports.js,insights.html,insights.css,insights-pipeline.css,insights.js,styles.css,app.js}",
+      "excludeFiles": "{.env*,.git/**,.vercel/**,.playwright-cli/**,.pytest_cache/**,data/**,docs/**,output/**,tests/**}"
+    }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "api/index.py"
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/cron/reconcile/0035",
+      "schedule": "35 0 * * *"
+    },
+    {
+      "path": "/api/cron/reconcile/0435",
+      "schedule": "35 4 * * *"
+    },
+    {
+      "path": "/api/cron/reconcile/0635",
+      "schedule": "35 6 * * *"
+    },
+    {
+      "path": "/api/cron/reconcile/1235",
+      "schedule": "35 12 * * *"
+    },
+    {
+      "path": "/api/cron/reconcile/1635",
+      "schedule": "35 16 * * *"
+    },
+    {
+      "path": "/api/cron/standard/08",
+      "schedule": "0 0 * * *"
+    },
+    {
+      "path": "/api/cron/insight/prepare",
+      "schedule": "0 2 * * *"
+    },
+    {
+      "path": "/api/cron/insight/generate",
+      "schedule": "0 4 * * *"
+    },
+    {
+      "path": "/api/cron/insight/retry",
+      "schedule": "0 6 * * *"
+    },
+    {
+      "path": "/api/cron/standard/20",
+      "schedule": "0 12 * * *"
+    },
+    {
+      "path": "/api/cron/daily",
+      "schedule": "10 16 * * *"
+    },
+    {
+      "path": "/api/cron/prepress/daily",
+      "schedule": "2 16 * * *"
+    },
+    {
+      "path": "/api/cron/prepress/08",
+      "schedule": "57 23 * * *"
+    },
+    {
+      "path": "/api/cron/prepress/20",
+      "schedule": "57 11 * * *"
+    },
+    {
+      "path": "/api/cron/prepress/article",
+      "schedule": "15 2 * * *"
+    },
+    {
+      "path": "/api/cron/prepress/reserve",
+      "schedule": "25 1 * * *"
+    }
+  ]
+}

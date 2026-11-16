@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0B1117">
+  <link rel="icon" href="/web/mark.svg">
+  <title>报告中心 — Meridian</title>
+  <link rel="stylesheet" href="reports.css" />
+  <link rel="stylesheet" href="/desk.css">
+  <script type="module" src="/web/shell.js"></script>
+</head>
+<body>
+  <meridian-header></meridian-header>
+
+  <main id="main-content" class="library-shell">
+    <button class="mobile-archive" id="archive-toggle" aria-controls="edition-archive" aria-expanded="false">选择研报 ▾</button>
+    <aside class="report-index" id="edition-archive">
+      <div class="index-head">
+        <div><span class="eyebrow">ARCHIVE</span><h1>报告归档</h1></div>
+        <span class="report-total" id="report-total">—</span>
+      </div>
+      <div class="filter-row">
+        <button class="active" data-filter="all">全部</button>
+        <button data-filter="daily">Daily Strategy</button>
+        <button data-filter="standard">Tactical Monitor</button>
+        <button data-filter="saved">已保存</button>
+      </div>
+      <div class="retention-note"><span></span><p>未保存报告在生成三天后自动删除。点击“保存报告”可长期保留。</p></div>
+      <div class="report-list" id="report-list" aria-live="polite"></div>
+    </aside>
+
+    <article class="reader" id="reader">
+      <div class="reader-empty" id="reader-empty">
+        <span class="empty-mark">Ø</span><h2>选择一份报告</h2><p>Daily Strategy 的归因与组合框架，或 Tactical Monitor 的 checkpoint 变化会显示在这里。</p>
+      </div>
+      <div class="reader-content" id="reader-content" hidden>
+        <header class="report-heading">
+          <div class="report-heading-copy">
+            <span class="eyebrow" id="detail-slot">—</span>
+            <h2 id="detail-title">—</h2>
+            <p id="detail-meta">—</p>
+          </div>
+          <div class="report-actions">
+            <button class="save-action" id="save-report">保存报告</button>
+            <a id="export-md" href="#">导出 Markdown</a>
+            <a id="export-json" href="#">导出 JSON</a>
+            <button class="delete-action" id="delete-report">删除</button>
+          </div>
+        </header>
+
+        <div id="standard-report">
+          <section class="executive-block">
+            <span>INVESTMENT VIEW</span>
+            <h3 id="detail-regime">—</h3>
+            <p id="detail-judgement">—</p>
+            <div class="executive-grid">
+              <div><small>KEY TAKEAWAYS</small><ul id="detail-takeaways"></ul></div>
+              <div><small>WHAT CHANGED</small><ul id="detail-changes"></ul></div>
+            </div>
+          </section>
+          <div class="asset-reports" id="asset-reports"></div>
+          <section class="news-section">
+            <div class="section-title"><span>EVENTS</span><h3>高相关事件</h3></div>
+            <div id="detail-news"></div>
+          </section>
+        </div>
+        <article class="research-article" id="article-report" hidden></article>
+        <footer class="report-footer" id="detail-disclaimer"></footer>
+      </div>
+    </article>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="reports.js"></script>
+</body>
+</html>
